@@ -111,7 +111,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 40%;
 }
 
 .hero-image::after {
