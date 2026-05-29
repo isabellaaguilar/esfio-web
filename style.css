@@ -289,6 +289,27 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     color: var(--gray);
 }
 
+.spotify-embed {
+    margin-bottom: 5rem;
+    max-width: 660px;
+}
+
+.spotify-embed iframe {
+    border-radius: 12px;
+}
+
+.escuchar-divider {
+    margin-bottom: 3rem;
+}
+
+.actos-title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
 .actos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
