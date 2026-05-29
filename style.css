@@ -1,22 +1,22 @@
 /* ========================================
    es fio y son la banda
-   Paleta extraída de la identidad visual
+   Paleta: amor (rojo) · caos (azul) · sanación (lila)
    ======================================== */
 
 :root {
     /* Paleta es fio */
-    --gold: #ecc64f;
-    --gold-dim: #c8a83d;
-    --magenta: #7a1b5e;
-    --cyan: #1de0d6;
-    --deep: #0c1a1f;
-    --deep-alt: #111d22;
-    --navy: #1a2f3d;
-    --orange: #e08020;
+    --red: #e02040;
+    --red-dim: #b81a35;
+    --blue: #5c6b8a;
+    --blue-dim: #3d4a64;
+    --lilac: #d4d0e8;
+    --lilac-dim: #b8b3d1;
+    --deep: #0f0f14;
+    --deep-alt: #16161e;
     --cream: #f4f1ec;
-    --cream-dim: #d4cfc7;
-    --gray: #6b7a7f;
-    --gray-light: #2a3a40;
+    --cream-dim: #ccc8c2;
+    --gray: #7a7580;
+    --gray-light: #2a2830;
 
     /* Tipografía */
     --serif: 'Playfair Display', Georgia, serif;
@@ -71,7 +71,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     transition: opacity 0.3s;
 }
 .nav a:hover { opacity: 1; }
-.nav-highlight { opacity: 1 !important; color: var(--gold); }
+.nav-highlight { opacity: 1 !important; color: var(--red); }
 
 .menu-btn { display: none; }
 
@@ -120,10 +120,10 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(12, 26, 31, 0.1) 0%,
-        rgba(12, 26, 31, 0) 30%,
-        rgba(12, 26, 31, 0.3) 70%,
-        rgba(12, 26, 31, 0.95) 100%
+        rgba(15, 15, 20, 0.15) 0%,
+        rgba(15, 15, 20, 0) 30%,
+        rgba(15, 15, 20, 0.4) 70%,
+        rgba(15, 15, 20, 0.97) 100%
     );
 }
 
@@ -143,8 +143,8 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     font-weight: 400;
     line-height: 0.85;
     letter-spacing: -0.03em;
-    color: var(--gold);
-    text-shadow: 0 2px 40px rgba(236, 198, 79, 0.15);
+    color: var(--cream);
+    text-shadow: 0 2px 60px rgba(224, 32, 64, 0.2);
 }
 
 .hero-band {
@@ -153,10 +153,10 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     font-style: italic;
     font-size: clamp(1.4rem, 3.5vw, 3rem);
     font-weight: 400;
-    color: var(--cream);
+    color: var(--lilac);
     margin-top: 0.3rem;
     margin-left: 0.3rem;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .hero-bottom {
@@ -197,7 +197,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--gold-dim);
+    color: var(--blue);
     white-space: nowrap;
 }
 
@@ -264,7 +264,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     line-height: 1.3;
     max-width: 700px;
     margin: 0 auto;
-    color: var(--gold);
+    color: var(--lilac);
 }
 
 .section--quote cite {
@@ -344,7 +344,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 1rem;
-    color: var(--gold);
+    color: var(--red);
 }
 
 .acto > p {
@@ -372,7 +372,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 .acto ol li::before {
     content: counter(song, decimal-leading-zero);
     font-size: 0.7rem;
-    color: var(--gray);
+    color: var(--blue);
     flex-shrink: 0;
 }
 
@@ -446,7 +446,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     position: absolute;
     width: 500px; height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(236, 198, 79, 0.1) 0%, rgba(122, 27, 94, 0.05) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(224, 32, 64, 0.08) 0%, rgba(212, 208, 232, 0.04) 50%, transparent 70%);
     animation: breathe 6s ease-in-out infinite;
 }
 
@@ -461,7 +461,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     font-size: 0.7rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--cyan);
+    color: var(--red);
     margin-bottom: 2rem;
 }
 
@@ -495,8 +495,8 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 }
 
 .pronto-words span:hover {
-    border-color: var(--gold);
-    color: var(--gold);
+    border-color: var(--lilac);
+    color: var(--lilac);
 }
 
 .btn {
@@ -504,14 +504,15 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     padding: 0.9rem 2.2rem;
-    border: 1px solid var(--gold);
-    color: var(--gold);
+    border: 1px solid var(--cream);
+    color: var(--cream);
     transition: all 0.3s var(--ease);
 }
 
 .btn:hover {
-    background: var(--gold);
-    color: var(--deep);
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--cream);
 }
 
 /* ===== FOOTER ===== */
