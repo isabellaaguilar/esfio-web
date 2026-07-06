@@ -101,14 +101,13 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
-    padding-top: 5rem;
 }
 
 .hero-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4rem 3rem 4rem 2.5rem;
+    padding: 8rem 3rem 4rem 2.5rem;
     position: relative;
     z-index: 2;
 }
@@ -131,8 +130,8 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     inset: 0;
     background: linear-gradient(
         to right,
-        rgba(15, 15, 20, 0.3) 0%,
-        transparent 40%
+        rgba(15, 15, 20, 0.2) 0%,
+        transparent 30%
     );
 }
 
@@ -140,7 +139,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     display: block;
     font-family: var(--serif);
     font-style: italic;
-    font-size: clamp(4rem, 9vw, 9rem);
+    font-size: clamp(5rem, 10vw, 10rem);
     font-weight: 400;
     line-height: 0.85;
     letter-spacing: -0.03em;
@@ -151,10 +150,10 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     display: block;
     font-family: var(--serif);
     font-style: italic;
-    font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+    font-size: clamp(1.3rem, 2.2vw, 2rem);
     font-weight: 400;
     color: var(--lilac);
-    margin-top: 0.6rem;
+    margin-top: 0.8rem;
     margin-left: 0.2rem;
     opacity: 0.85;
 }
@@ -162,7 +161,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 .hero-bottom {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
     margin-top: 3rem;
 }
 
@@ -171,24 +170,24 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--cream);
-    opacity: 0.4;
+    opacity: 0.35;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr auto;
+        grid-template-rows: 55vh auto;
         padding-top: 0;
     }
 
     .hero-image {
         grid-row: 1;
-        height: 65vh;
     }
 
     .hero-text {
         grid-row: 2;
-        padding: 2rem 1.5rem;
+        padding: 2.5rem 1.5rem 3rem;
+        justify-content: flex-start;
     }
 
     .hero-bottom {
