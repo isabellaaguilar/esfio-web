@@ -1,22 +1,24 @@
 /* ========================================
-   es fio y son la banda
-   Paleta: amor (rojo) · caos (azul) · sanación (lila)
+   es fio
+   Paleta: mostaza (dorado) · terracota · lavanda/índigo · naranja
    ======================================== */
 
 :root {
     /* Paleta es fio */
-    --red: #e02040;
-    --red-dim: #b81a35;
-    --blue: #5c6b8a;
-    --blue-dim: #3d4a64;
-    --lilac: #d4d0e8;
-    --lilac-dim: #b8b3d1;
-    --deep: #0f0f14;
-    --deep-alt: #16161e;
+    --red: #E6C43E;
+    --red-dim: #c9a930;
+    --blue: #9BA8D4;
+    --blue-dim: #6b76a8;
+    --lilac: #C96154;
+    --lilac-dim: #a84c41;
+    --deep: #14120f;
+    --deep-alt: #1c1915;
     --cream: #f4f1ec;
     --cream-dim: #ccc8c2;
-    --gray: #7a7580;
-    --gray-light: #2a2830;
+    --gray: #a08f78;
+    --gray-light: #2c2820;
+    --naranja: #D27929;
+    --indigo: #5247A7;
 
     /* Tipografía */
     --serif: 'Playfair Display', Georgia, serif;
@@ -54,11 +56,13 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 }
 
 .logo {
-    font-family: var(--italic);
-    font-style: italic;
-    font-size: 1.1rem;
-    letter-spacing: -0.02em;
-    color: var(--cream);
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 1.4rem;
+    width: auto;
 }
 
 .nav { display: flex; gap: 2rem; }
@@ -297,9 +301,68 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     letter-spacing: -0.02em;
 }
 
-.spotify-embed {
-    margin-bottom: 5rem;
+.youtube-embed {
+    margin-bottom: 1rem;
     max-width: 660px;
+}
+
+.youtube-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    background: var(--deep-alt);
+    border: 1px solid var(--gray-light);
+    transition: border-color 0.3s, transform 0.3s var(--ease);
+}
+
+.youtube-card:hover {
+    border-color: var(--red);
+    transform: translateY(-2px);
+}
+
+.youtube-icon {
+    width: 2.4rem;
+    height: auto;
+    color: var(--red);
+    flex-shrink: 0;
+}
+
+.youtube-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.youtube-text strong {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--cream);
+}
+
+.youtube-text small {
+    font-size: 0.8rem;
+    color: var(--gray);
+    letter-spacing: 0.04em;
+}
+
+.spotify-link {
+    display: inline-block;
+    margin-bottom: 5rem;
+    font-size: 0.8rem;
+    color: var(--gray);
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 2px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.spotify-link:hover {
+    color: var(--cream);
+    border-color: var(--gray);
 }
 
 .actos-header { margin-bottom: 3rem; }
@@ -350,6 +413,10 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     margin-bottom: 1rem;
     color: var(--red);
 }
+
+.acto--1 h4 { color: var(--lilac); }
+.acto--2 h4 { color: var(--indigo); }
+.acto--3 h4 { color: var(--naranja); }
 
 .acto > p {
     font-size: 0.85rem;
