@@ -95,6 +95,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 .mobile-nav a:hover { opacity: 1; }
 .mobile-nav-footer {
     position: absolute; bottom: 2rem;
+    display: flex; gap: 1.5rem;
     font-size: 0.8rem; opacity: 0.4;
 }
 
@@ -301,7 +302,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     letter-spacing: -0.02em;
 }
 
-.youtube-embed {
+.applemusic-embed {
     margin-bottom: 1.5rem;
     max-width: 660px;
 }
