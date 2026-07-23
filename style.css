@@ -314,6 +314,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     margin-bottom: 5rem;
 }
 
+.applemusic-link,
 .youtube-link,
 .spotify-link {
     display: inline-block;
@@ -325,6 +326,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     transition: color 0.3s, border-color 0.3s;
 }
 
+.applemusic-link:hover,
 .youtube-link:hover,
 .spotify-link:hover {
     color: var(--cream);
