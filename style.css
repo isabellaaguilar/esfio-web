@@ -52,7 +52,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem 2rem;
-    mix-blend-mode: difference;
+    background: linear-gradient(to bottom, rgba(15,13,10,0.65) 0%, rgba(15,13,10,0.25) 70%, transparent 100%);
 }
 
 .logo {
@@ -61,17 +61,18 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 }
 
 .logo-img {
-    height: 1.4rem;
+    height: 2.2rem;
     width: auto;
 }
 
 .nav { display: flex; gap: 2rem; }
 
 .nav a {
-    font-size: 0.8rem;
-    font-weight: 300;
+    font-size: 0.85rem;
+    font-weight: 400;
     letter-spacing: 0.06em;
-    opacity: 0.6;
+    color: var(--cream);
+    opacity: 0.75;
     transition: opacity 0.3s;
 }
 .nav a:hover { opacity: 1; }
@@ -601,6 +602,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 
 @media (max-width: 680px) {
     .header { padding: 1rem 1.5rem; }
+    .logo-img { height: 1.8rem; }
     .nav { display: none; }
     .menu-btn { display: block; }
     .section { padding: 5rem 1.5rem; }
