@@ -61,7 +61,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 }
 
 .logo-img {
-    height: 2.2rem;
+    height: 2.8rem;
     width: auto;
 }
 
@@ -602,7 +602,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 
 @media (max-width: 680px) {
     .header { padding: 1rem 1.5rem; }
-    .logo-img { height: 1.8rem; }
+    .logo-img { height: 2.2rem; }
     .nav { display: none; }
     .menu-btn { display: block; }
     .section { padding: 5rem 1.5rem; }
