@@ -303,7 +303,7 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
     letter-spacing: -0.02em;
 }
 
-.applemusic-embed {
+.spotify-embed {
     margin-bottom: 1.5rem;
     max-width: 660px;
 }
@@ -317,7 +317,9 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 
 .applemusic-link,
 .youtube-link,
-.spotify-link {
+.spotify-link,
+.soundcloud-link,
+.facebook-link {
     display: inline-block;
     font-size: 0.8rem;
     color: var(--gray);
@@ -329,7 +331,9 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 
 .applemusic-link:hover,
 .youtube-link:hover,
-.spotify-link:hover {
+.spotify-link:hover,
+.soundcloud-link:hover,
+.facebook-link:hover {
     color: var(--cream);
     border-color: var(--gray);
 }
