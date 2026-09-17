@@ -304,15 +304,44 @@ button { background: none; border: none; color: inherit; cursor: pointer; font: 
 }
 
 .spotify-embed {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     max-width: 660px;
+}
+
+.escuchar-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--cream);
+    opacity: 0.85;
+    max-width: 42ch;
+    line-height: 1.5;
+    margin: 0 0 2rem;
 }
 
 .escuchar-links {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 1.5rem;
+}
+
+.escuchar-press {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin: 0 0 5rem;
+}
+
+.escuchar-press a {
+    color: var(--gray);
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 1px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.escuchar-press a:hover {
+    color: var(--cream);
+    border-color: var(--gray);
 }
 
 .applemusic-link,
