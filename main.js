@@ -1,3 +1,13 @@
+// ===== Announcement bar =====
+const announceBar = document.getElementById('announceBar');
+const announceClose = document.getElementById('announceClose');
+
+announceClose.addEventListener('click', () => {
+    announceBar.classList.remove('is-visible');
+    document.documentElement.classList.remove('has-announce');
+    try { localStorage.setItem('esfio_ep_banner_closed', '1'); } catch(e) {}
+});
+
 // ===== Mobile menu =====
 const menuBtn = document.querySelector('.menu-btn');
 const mobileNav = document.querySelector('.mobile-nav');

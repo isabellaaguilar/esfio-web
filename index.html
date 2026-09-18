@@ -12,6 +12,21 @@
 </head>
 <body>
 
+    <div class="announce-bar" id="announceBar">
+        <a href="#escuchar" class="announce-link">🎉 Ya salió el EP completo — <strong>"Jaque mate"</strong> · Escuchar ahora</a>
+        <button class="announce-close" id="announceClose" aria-label="Cerrar anuncio">&times;</button>
+    </div>
+    <script>
+    (function(){
+        try {
+            if (!localStorage.getItem('esfio_ep_banner_closed')) {
+                document.getElementById('announceBar').classList.add('is-visible');
+                document.documentElement.classList.add('has-announce');
+            }
+        } catch(e) {}
+    })();
+    </script>
+
     <header class="header">
         <a href="#" class="logo"><img src="img/logo.svg" alt="es fio" class="logo-img"></a>
         <nav class="nav" role="navigation">
@@ -95,17 +110,17 @@
             <div class="spotify-embed">
                 <iframe
                     style="border-radius:12px;"
-                    src="https://open.spotify.com/embed/album/3rZRHkEweNo9mejD2FqfNZ?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/album/3iL8CYLOKrZf9Vw7TopGlg?utm_source=generator&theme=0"
                     width="100%"
-                    height="152"
+                    height="450"
                     frameBorder="0"
                     allowfullscreen=""
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
-                    title="La fiebre — es fio, en Spotify">
+                    title="Jaque mate — es fio, en Spotify">
                 </iframe>
             </div>
-            <p class="escuchar-note">"La fiebre" es un amor de verano en Cóbano — y una trampa tan bonita como la costa que la inspiró.</p>
+            <p class="escuchar-note">"Jaque mate" ya está completo. Incluye "La fiebre", un amor de verano en Cóbano — y una trampa tan bonita como la costa que la inspiró.</p>
             <div class="escuchar-links">
                 <a href="https://open.spotify.com/artist/4LMHennDVWnAWwKL91M8Te" target="_blank" rel="noopener" class="spotify-link">Ver perfil completo en Spotify</a>
                 <a href="https://www.youtube.com/@es_fio" target="_blank" rel="noopener" class="youtube-link">Escuchar también en YouTube</a>
