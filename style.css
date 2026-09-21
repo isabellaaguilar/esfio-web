@@ -692,8 +692,11 @@ html.has-announce .hero { margin-top: 2.75rem; }
     .mundo-layout { grid-template-columns: 1fr; gap: 3rem; }
     .mundo-image { aspect-ratio: 4/5; }
     .vivo-grid { grid-template-columns: 1fr; }
+    .vivo-img--1, .vivo-img--2, .vivo-info { grid-column: 1/2; grid-row: auto; }
     .vivo-img--1 { aspect-ratio: 4/5; }
     .vivo-img--2 { aspect-ratio: 16/9; }
+    .vivo-info { padding-top: 1.5rem; }
+    .vivo-info > p { max-width: none; }
     .footer-inner { flex-direction: column; gap: 1.5rem; }
     .footer-col--right { text-align: left; }
     .pronto-words { gap: 1rem; }
