@@ -9,9 +9,8 @@ announceClose.addEventListener('click', () => {
 });
 
 // ===== Próximos shows =====
-// Para que Fio edite sin código: publicar una hoja de Google como CSV (Archivo > Compartir > Publicar en la web)
-// y reemplazar este valor por esa URL. Columnas: fecha (AAAA-MM-DD), titulo, lugar, link
-const SHOWS_URL = 'shows.csv';
+// Hoja de Google publicada como CSV. Columnas: fecha (AAAA-MM-DD, texto plano), titulo, lugar, link
+const SHOWS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSwCCSwov22npqoZoTxN-_CUa2llaTsTk8cSN_kJNWciwm8XNDabZ05QTINWf0xXlJFjwviiptzrJgy/pub?output=csv';
 
 function parseCSV(text) {
     const rows = [];
@@ -40,7 +39,7 @@ async function loadShows() {
     const list = document.getElementById('proximoList');
     if (!list) return;
     try {
-        const res = await fetch(SHOWS_URL, { cache: 'no-cache' });
+        const res = await fetch(SHOWS_URL);
         if (!res.ok) return;
         const rows = parseCSV(await res.text());
         const header = rows.shift().map(h => h.trim().toLowerCase());
