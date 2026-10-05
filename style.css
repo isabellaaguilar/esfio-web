@@ -206,6 +206,24 @@ html.has-announce .hero { margin-top: 2.75rem; }
     opacity: 0.85;
 }
 
+.hero-cta {
+    display: inline-block;
+    margin-top: 1.8rem;
+    padding: 1rem 2rem;
+    background: var(--red);
+    color: var(--deep);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.hero-cta:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+}
+
 .hero-bottom {
     display: flex;
     gap: 2rem;
@@ -226,6 +244,13 @@ html.has-announce .hero { margin-top: 2.75rem; }
         bottom: 3rem;
         left: 1.5rem;
         right: 1.5rem;
+    }
+
+    .hero-cta {
+        display: block;
+        text-align: center;
+        margin-top: 1.4rem;
+        padding: 1rem 1.25rem;
     }
 
     .hero-bottom {
@@ -495,6 +520,64 @@ html.has-announce .hero { margin-top: 2.75rem; }
     flex-shrink: 0;
 }
 
+/* ===== PRÓXIMO SHOW ===== */
+.section--proximo {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.proximo-title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 400;
+    margin-bottom: 1.8rem;
+}
+
+.proximo-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--gray-light);
+}
+
+.proximo-empty {
+    padding: 1.2rem 0;
+    font-size: 0.95rem;
+    color: var(--gray);
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.show {
+    display: flex;
+    gap: 1.8rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.show-date {
+    min-width: 4.5rem;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--red);
+    line-height: 1.1;
+}
+
+.show-title { font-size: 1.05rem; color: var(--cream); margin: 0 0 0.25rem; }
+.show-place { font-size: 0.85rem; color: var(--gray); margin: 0 0 0.5rem; }
+
+.show-link {
+    font-size: 0.8rem;
+    color: var(--gray);
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 2px;
+}
+
+.show-link:hover { color: var(--cream); }
+
 /* ===== EN VIVO ===== */
 .section--vivo {
     max-width: 1200px;
@@ -689,6 +772,8 @@ html.has-announce .hero { margin-top: 2.75rem; }
     .nav { display: none; }
     .menu-btn { display: block; }
     .section { padding: 5rem 1.5rem; }
+    .section--proximo { padding-top: 2rem; padding-bottom: 3rem; }
+    .show { gap: 1.2rem; }
     .mundo-layout { grid-template-columns: 1fr; gap: 3rem; }
     .mundo-image { aspect-ratio: 4/5; }
     .vivo-grid { grid-template-columns: 1fr; }
