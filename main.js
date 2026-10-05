@@ -1,3 +1,12 @@
+// ===== Logo del header: aparece al bajar del hero =====
+const headerEl = document.querySelector('.header');
+const heroEl = document.querySelector('.hero');
+function updateHeaderLogo() {
+    headerEl.classList.toggle('at-top', window.scrollY < heroEl.offsetHeight * 0.6);
+}
+updateHeaderLogo();
+window.addEventListener('scroll', updateHeaderLogo, { passive: true });
+
 // ===== Announcement bar =====
 const announceBar = document.getElementById('announceBar');
 const announceClose = document.getElementById('announceClose');
