@@ -35,9 +35,39 @@ function parseCSV(text) {
     return rows;
 }
 
+function imageSrc(url) {
+    if (!/^https:\/\//i.test(url)) return '';
+    if (/drive\.google\.com/i.test(url)) {
+        const m = url.match(/\/d\/([\w-]+)/) || url.match(/[?&]id=([\w-]+)/);
+        return m ? 'https://lh3.googleusercontent.com/d/' + m[1] + '=w700' : '';
+    }
+    return url;
+}
+
+function makeImage(url, alt, className) {
+    const src = imageSrc(url);
+    if (!src) return null;
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = alt;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    if (className) img.className = className;
+    img.addEventListener('error', () => img.remove());
+    return img;
+}
+
+function formatDate(d, withYear) {
+    const opts = { day: 'numeric', month: 'short' };
+    if (withYear) opts.year = 'numeric';
+    return d.toLocaleDateString('es-CR', opts).replace(/\./g, '');
+}
+
 async function loadShows() {
-    const list = document.getElementById('proximoList');
-    if (!list) return;
+    const upcomingList = document.getElementById('proximoList');
+    const pastSection = document.getElementById('pasados');
+    const pastList = document.getElementById('pasadosList');
+    if (!upcomingList) return;
     try {
         const res = await fetch(SHOWS_URL);
         if (!res.ok) return;
@@ -45,49 +75,74 @@ async function loadShows() {
         const header = rows.shift().map(h => h.trim().toLowerCase());
         const col = name => header.indexOf(name);
         const today = new Date(); today.setHours(0, 0, 0, 0);
-        const shows = rows.map(r => ({
+        const all = rows.map(r => ({
             fecha: (r[col('fecha')] || '').trim(),
             titulo: (r[col('titulo')] || '').trim(),
             lugar: (r[col('lugar')] || '').trim(),
-            link: (r[col('link')] || '').trim()
-        })).filter(s => {
-            const d = new Date(s.fecha + 'T00:00:00');
-            return s.titulo && !isNaN(d) && d >= today;
-        }).sort((a, b) => a.fecha.localeCompare(b.fecha));
-        if (!shows.length) return;
+            link: (r[col('link')] || '').trim(),
+            imagen: (r[col('imagen')] || '').trim()
+        })).filter(s => s.titulo && !isNaN(new Date(s.fecha + 'T00:00:00')));
 
-        list.textContent = '';
-        shows.forEach(s => {
-            const d = new Date(s.fecha + 'T00:00:00');
-            const item = document.createElement('div');
-            item.className = 'show';
-            const date = document.createElement('div');
-            date.className = 'show-date';
-            date.textContent = d.toLocaleDateString('es-CR', { day: 'numeric', month: 'short' }).replace('.', '');
-            const info = document.createElement('div');
-            info.className = 'show-info';
-            const title = document.createElement('p');
-            title.className = 'show-title';
-            title.textContent = s.titulo;
-            info.appendChild(title);
-            if (s.lugar) {
-                const place = document.createElement('p');
-                place.className = 'show-place';
-                place.textContent = s.lugar;
-                info.appendChild(place);
-            }
-            if (/^https?:\/\//i.test(s.link)) {
-                const a = document.createElement('a');
-                a.className = 'show-link';
-                a.href = s.link;
-                a.target = '_blank';
-                a.rel = 'noopener';
-                a.textContent = 'Más info';
-                info.appendChild(a);
-            }
-            item.append(date, info);
-            list.appendChild(item);
-        });
+        const dateOf = s => new Date(s.fecha + 'T00:00:00');
+        const upcoming = all.filter(s => dateOf(s) >= today).sort((a, b) => a.fecha.localeCompare(b.fecha));
+        const past = all.filter(s => dateOf(s) < today).sort((a, b) => b.fecha.localeCompare(a.fecha));
+
+        if (upcoming.length) {
+            upcomingList.textContent = '';
+            upcoming.forEach(s => {
+                const item = document.createElement('div');
+                item.className = 'show';
+                const date = document.createElement('div');
+                date.className = 'show-date';
+                date.textContent = formatDate(dateOf(s), false);
+                const info = document.createElement('div');
+                info.className = 'show-info';
+                const title = document.createElement('p');
+                title.className = 'show-title';
+                title.textContent = s.titulo;
+                info.appendChild(title);
+                if (s.lugar) {
+                    const place = document.createElement('p');
+                    place.className = 'show-place';
+                    place.textContent = s.lugar;
+                    info.appendChild(place);
+                }
+                if (/^https?:\/\//i.test(s.link)) {
+                    const a = document.createElement('a');
+                    a.className = 'show-link';
+                    a.href = s.link;
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                    a.textContent = 'Más info';
+                    info.appendChild(a);
+                }
+                item.append(date, info);
+                const flyer = makeImage(s.imagen, 'Flyer: ' + s.titulo, 'show-flyer');
+                if (flyer) item.appendChild(flyer);
+                upcomingList.appendChild(item);
+            });
+        }
+
+        if (past.length && pastSection && pastList) {
+            past.forEach(s => {
+                const card = document.createElement('figure');
+                card.className = 'past';
+                const img = makeImage(s.imagen, 'Flyer: ' + s.titulo, '');
+                if (img) card.appendChild(img);
+                const cap = document.createElement('figcaption');
+                cap.className = 'past-meta';
+                const d = document.createElement('span');
+                d.className = 'past-date';
+                d.textContent = formatDate(dateOf(s), true);
+                const t = document.createElement('span');
+                t.className = 'past-title';
+                t.textContent = s.titulo + (s.lugar ? ' · ' + s.lugar : '');
+                cap.append(d, t);
+                card.appendChild(cap);
+                pastList.appendChild(card);
+            });
+            pastSection.hidden = false;
+        }
     } catch (e) {}
 }
 loadShows();

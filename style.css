@@ -578,6 +578,42 @@ html.has-announce .hero { margin-top: 2.75rem; }
 
 .show-link:hover { color: var(--cream); }
 
+.show-flyer {
+    width: 6.5rem;
+    height: auto;
+    align-self: flex-start;
+    margin-left: auto;
+    flex-shrink: 0;
+    border: 1px solid var(--gray-light);
+}
+
+.pasados-grid {
+    columns: 3 220px;
+    column-gap: 1.5rem;
+}
+
+.past {
+    break-inside: avoid;
+    margin: 0 0 1.8rem;
+}
+
+.past img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--gray-light);
+}
+
+.past-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-top: 0.6rem;
+}
+
+.past-date { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--red); }
+.past-title { font-size: 0.85rem; color: var(--cream-dim); line-height: 1.4; }
+
 /* ===== EN VIVO ===== */
 .section--vivo {
     max-width: 1200px;
@@ -774,6 +810,8 @@ html.has-announce .hero { margin-top: 2.75rem; }
     .section { padding: 5rem 1.5rem; }
     .section--proximo { padding-top: 2rem; padding-bottom: 3rem; }
     .show { gap: 1.2rem; }
+    .show-flyer { width: 5rem; }
+    .pasados-grid { columns: 2 140px; column-gap: 1rem; }
     .mundo-layout { grid-template-columns: 1fr; gap: 3rem; }
     .mundo-image { aspect-ratio: 4/5; }
     .vivo-grid { grid-template-columns: 1fr; }
