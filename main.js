@@ -190,7 +190,7 @@ animatedEls.forEach(el => observer.observe(el));
 // ===== Add data-animate to elements on load =====
 document.addEventListener('DOMContentLoaded', () => {
     const targets = document.querySelectorAll(
-        '.mundo-image, .mundo-text, .section--quote blockquote, .acto, .vivo-img, .vivo-info, .pronto-inner'
+        '.mundo-image, .mundo-text, .section--quote blockquote, .acto, .vivo-img, .vivo-info, .lanzamiento, .pronto-inner'
     );
     targets.forEach((el, i) => {
         el.setAttribute('data-animate', '');
